@@ -1,0 +1,8 @@
+{
+  "name": "MiLabUBA",
+  "description": "Aplicación de laboratorio liviana para el análisis de geles, recuento celular microscópico y registro de fichas integradas con almacenamiento local continuo.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

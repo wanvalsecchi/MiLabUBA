@@ -1,0 +1,27 @@
+{
+  "short_name": "MiLabUBA",
+  "name": "MiLabUBA - Laboratorio de Bioimágenes y Análisis Bioquímico",
+  "description": "Aplicación científica para el análisis cuantitativo de bioimágenes (densitometría de geles, zimografía, colorimetría RGV y conteo celular microscópico).",
+  "icons": [
+    {
+      "src": "/logo_pwa.jpg",
+      "type": "image/jpeg",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo_pwa.jpg",
+      "type": "image/jpeg",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/",
+  "id": "/",
+  "scope": "/",
+  "background_color": "#FFF3E0",
+  "theme_color": "#E69A5E",
+  "display": "standalone",
+  "orientation": "any",
+  "categories": ["education", "medical", "productivity"]
+}
