@@ -87,7 +87,7 @@ El proyecto incluye:
 
 Si utiliza este software en publicaciones científicas o tesis, por favor cite este trabajo como:
 
-> **Valsecchi, W.M.** (2026). *MiLabUBA: Software de Procesamiento Cuantitativo de Bioimágenes y Registro de Laboratorio*. [DOI: Pendiente en Zenodo].
+> **Valsecchi, W.M.** (2026). *MiLabUBA: Software de Procesamiento Cuantitativo de Bioimágenes y Registro de Laboratorio*. [DOI: 10.5281/zenodo.22851930].
 
 ---
 
