@@ -1,95 +1,90 @@
-# MiLabUBA — Plataforma de Análisis Cuantitativo de Bioimágenes y Registro de Laboratorio
+# MiLabUBA — Quantitative Bioimage Analysis Platform for biomedical and biochemical research and higher education
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22851930.svg)](https://doi.org/10.5281/zenodo.22851930)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18.x-61dafb.svg)](https://reactjs.org/)
 [![PWA Ready](https://img.shields.io/badge/PWA-Ready-orange.svg)](https://web.dev/progressive-web-apps/)
 
-**MiLabUBA** es un software científico interactivo y aplicación web progresiva (PWA) de alto rendimiento orientada a la investigación biomédica, bioquímica y docencia universitaria. Permite la adquisición, segmentación geométrica y procesamiento cuantitativo de imágenes de laboratorio (*in situ* y sin necesidad de conexión externa continua), así como el registro estructurado de fichas de trabajo y generación de informes técnicos exportables.
+🌐 **[Versión en Español (Spanish version)](./README_es.md)**
+
+**MiLabUBA** is an interactive scientific software and high-performance Progressive Web Application (PWA) designed for biomedical and biochemical research and university teaching. It enables on-site image acquisition, geometric region-of-interest (ROI) segmentation, and quantitative bioimage analysis without requiring continuous internet connectivity, alongside persistent experiment logbooks and automated PDF reporting.
 
 ---
 
-## 🔬 Módulos Científicos y Funcionalidades
+## 🔬 Scientific Modules & Core Capabilities
 
-### 1. Densitometría de Geles (SDS-PAGE / Agarosa / Western Blot)
-- **Segmentación de Regiones de Interés (ROI):** Selección adaptativa mediante formas geométricas (elipses, rectángulos, trapezoides, triángulos y rombos) con rotación y ajuste bidimensional de dimensiones.
-- **Canales de color:** Descomposición en luminancia / escala de grises, canal Rojo, Verde o Azul.
-- **Cuantificación Óptica:** Cálculo de Densidad Óptica Integrada (IOD, *Integrated Optical Density*), intensidad media y área en píxeles.
-- **Corrección de Fondo:** Sustracción local de fondo (zonas de control de blanco/background).
-- **Curvas de Calibración:** Ajuste lineal de estándares para interpolación directa de concentración de muestras problema.
+### 1. Gel Densitometry (SDS-PAGE / Agarose / Western Blot)
+- **Geometric Region of Interest (ROI) Segmentation:** Adaptive multi-shape boundary selection (ellipses, rectangles, trapezoids, triangles, and rhombuses) with rotation and bidirectional dimension fine-tuning.
+- **Color Channel Decomposition:** Grayscale luminance extraction or selective inspection through Red, Green, or Blue channels.
+- **Optical Quantification:** Automatic computation of Integrated Optical Density (IOD), Mean Pixel Intensity, and Geometric Pixel Area.
+- **Background Normalization:** Localized background subtraction with blank controls.
+- **Standard Calibration Curves:** Linear regression modeling using known standards for automated unknown sample concentration interpolation.
 
-### 2. Zimografía
-- Cuantificación enzimática sobre geles con sustratos embebidos (gelatina, caseína).
-- Detección de bandas claras sobre fondo oscuro (*Light on Dark*), con normalización de fondo de degradación y determinación de actividad enzimática total.
+### 2. Zymography Analysis
+- Enzymatic quantification on substrate-embedded gels (gelatin, casein).
+- High-contrast detection of digestion clearance bands (*light-on-dark bands*), substrate background normalization, and total enzymatic activity computation.
 
-### 3. Colorimetría RGV
-- Análisis de absorbancia/densidad en placas de cultivo, micropocillos y ensayos colorimétricos.
-- Ajuste dinámico de apertura y radio de análisis con actualización instantánea de parámetros espectrofotométricos aproximados por imagen.
+### 3. RGV Colorimetry
+- Quantitative absorbance and optical density analysis on culture plates, microtiter wells, and colorimetric chemical assays.
+- Real-time aperture radius slider with dynamic batch recalculation across all reference and unknown reaction wells.
 
-### 4. Recuento Celular / Microscopía
-- Marcado y conteo diferencial de campos microscópicos con discriminación por tipos celulares o viabilidad (vivas vs. muertas).
-- Cálculo de densidad celular por campo y viabilidad porcentual.
+### 4. Cell Counting & Microscopy
+- Manual differential cell counting grid over microphotographs with multiple marker types (e.g., live vs. dead cell viability determination).
+- Automatic calculation of cell density per optical field and overall percentage viability.
 
-### 5. Fichas de Trabajo y Exportación
-- Registro persistente local (IndexedDB / LocalStorage) de protocolos, observaciones y metadatos experimentales.
-- Exportación automatizada de reportes en PDF con tablas analíticas, curvas de regresión y captura de las regiones evaluadas.
-
----
-
-## ⚙️ Arquitectura Tecnológica y Privacidad
-
-- **Procesamiento 100% Client-Side:** Todas las operaciones de convolución, lectura de píxeles en canvas 2D, transformaciones matriciales y cálculos estadísticos se ejecutan localmente en el procesador del dispositivo cliente. No se transmiten imágenes sensibles a servidores de terceros, garantizando privacidad de datos y funcionamiento en laboratorios sin conexión a internet (*offline-first*).
-- **Frontend:** React 18, TypeScript, Tailwind CSS, Lucide Icons, Motion.
-- **Estándar PWA:** Service Worker con políticas de caché y manifiesto web para instalación como aplicación de escritorio o móvil (Android / iOS).
+### 5. Laboratory Records & Report Generation
+- Client-side persistent storage (IndexedDB / LocalStorage) of protocols, metadata, dates, and experimental observations.
+- Export of comprehensive PDF laboratory reports featuring calibrated regression charts, data tables, sample details, and visual ROI overlays.
 
 ---
 
-## 🚀 Instalación y Ejecución Local
+## ⚙️ Architecture, Performance & Privacy
 
-### Prerrequisitos
-- Node.js (v18 o superior)
-- npm o yarn
+- **100% Client-Side Processing:** All pixel-level matrix operations, canvas 2D transformations, and bio-statistical regressions execute directly on the user device's local processor. No biological or confidential research images are uploaded to external servers, ensuring complete data privacy, HIPAA/GDPR-compliant security, and full offline usability (*offline-first*).
+- **Technology Stack:** React 18, TypeScript, Tailwind CSS, Lucide Icons, Motion.
+- **Progressive Web App (PWA):** Equipped with a dedicated Service Worker caching strategy and web app manifest for installation across desktop (Windows, macOS, Linux) and mobile (Android, iOS) environments.
 
-### Pasos
-1. Clonar el repositorio:
+---
+
+## 🚀 Installation & Local Development
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Quick Start
+1. Clone the repository:
    ```bash
-   git clone https://github.com/TU_USUARIO/milabuba.git
+   git clone https://github.com/wandafouba/milabuba.git
    cd milabuba
    ```
 
-2. Instalar dependencias:
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-3. Iniciar en modo desarrollo:
+3. Launch development server:
    ```bash
    npm run dev
    ```
-   Abrir en el navegador en `http://localhost:3000`.
+   Open `http://localhost:3000` in your web browser.
 
-4. Compilar para producción:
+4. Build production bundle:
    ```bash
    npm run build
    ```
 
 ---
 
-## 📄 Publicación y Empaquetado como App (Google Play / TWA)
+## 🏛️ Academic Citation
 
-El proyecto incluye:
-- `public/manifest.json`: Configuración PWA compatible con estándares de Google Play.
-- `public/.well-known/assetlinks.json`: Enlace de asociación digital para Trusted Web Activity (TWA).
+If you use this software in your research, academic thesis, or laboratory coursework, please cite it as:
 
----
-
-## 🏛️ Cita Académica y Depósito
-
-Si utiliza este software en publicaciones científicas o tesis, por favor cite este trabajo como:
-
-> **Valsecchi, W.M.** (2026). *MiLabUBA: Software de Procesamiento Cuantitativo de Bioimágenes y Registro de Laboratorio*. [DOI: 10.5281/zenodo.22851930].
+> **Valsecchi, WM.** (2026). *MiLabUBA — Quantitative Bioimage Analysis Platform for biomedical and biochemical research and higher education*. Zenodo. https://doi.org/10.5281/zenodo.22851930
 
 ---
 
-## 📜 Licencia
-Este proyecto se distribuye bajo la licencia MIT. Consulte el archivo `LICENSE` para más detalles.
+## 📜 License & Copyright
+Copyright (c) 2026 Wanda M. Valsecchi. All rights reserved under the MIT License.
